@@ -1,0 +1,24 @@
+# This is where everything lives
+DOTFILES="$HOME/.dotfiles"
+export PROJECTS="$HOME/code"
+
+if [ -f ~/.localrc ]; then
+  . ~/.localrc
+fi
+
+# This needs to go here
+shopt -s nullglob
+
+# Setup the PATH
+export PATH="~/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
+
+# Load completions from homebrew
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion  ]; then
+  . $(brew --prefix)/share/bash-completion/bash_completion
+fi
+
+# Load all the config files
+config_files=($DOTFILES/**/*.bash)
+for file in ${config_files[@]}; do
+  source $file
+done
