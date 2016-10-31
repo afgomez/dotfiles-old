@@ -1,0 +1,35 @@
+tap 'homebrew/versions'
+
+cask_args appdir: '/Applications'
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+
+# Brew formulas
+brew 'bash'
+brew 'bash-completion2'
+brew 'ctags'
+brew 'elixir'
+brew 'git', args: ['with-pcre']
+brew 'hub'
+brew 'macvim', args: ['with-luajit', 'with-override-system-vim']
+brew 'node'
+brew 'rbenv'
+brew 'ruby-build'
+brew 'the_silver_searcher'
+
+# Cask formulas
+cask '1password'
+cask 'caffeine'
+cask 'dropbox'
+cask 'firefoxdeveloperedition'
+cask 'flux'
+cask 'iterm2'
+cask 'qlcolorcode'
+cask 'qlmarkdown'
+cask 'qlstephen'
+cask 'quicklook-csv'
+cask 'shiftit'
+cask 'skype'
+cask 'skype'
+cask 'transmission'
+cask 'vlc'
