@@ -1,4 +1,5 @@
 alias ..='cd ..'
+alias cd='>/dev/null cd'
 
 if [ `uname -s` == "Darwin"   ]; then
   alias ls='ls -FG'
