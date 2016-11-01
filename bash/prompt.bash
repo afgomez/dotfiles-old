@@ -1,1 +1,3 @@
-PS1='\w$(__git_ps1 "[%s]")$ '
+# Still haven't found a good way of doing this..
+GIT_PS1_SHOWDIRTYSTATE=true
+PS1="\$($(cat $DOTFILES/bash/fancy_prompt))"

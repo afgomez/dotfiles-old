@@ -1,0 +1,25 @@
+status="\w"
+
+# Color the git branch
+branch=$(__git_ps1 "%s")
+if [ -n "$branch" ]; then
+  case "$branch" in
+    master*)
+      color="\033[0;31m" # Red
+      ;;
+    *)
+      color="\033[0;33m" # Yellow
+      ;;
+  esac
+  status="${status}[\[${color}\]${branch}\[\033[0;0m\]]\$ "
+else
+  status="${status}\$ "
+fi
+
+# If I'm over ssh print the host
+host=""
+if [[ $SSH_CONNECTION ]]; then
+    host="\[\033[0;32m\]\h\[\033[0;0m\] "
+fi
+
+echo "${host}${status}"
