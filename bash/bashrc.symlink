@@ -1,5 +1,5 @@
 # This is where everything lives
-DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/.dotfiles"
 export PROJECTS="$HOME/code"
 
 if [ -f ~/.localrc ]; then
