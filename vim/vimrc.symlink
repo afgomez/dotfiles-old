@@ -1,0 +1,296 @@
+" Disable vi mode
+set nocompatible
+
+"
+" Plugin setup
+" ------------
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" Behaviour related plugins
+Plug 'afgomez/vim-whitespace'
+Plug 'ajh17/VimCompletesMe'
+Plug 'dietsche/vim-lastplace'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'qpkorr/vim-bufkill'
+Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-scripts/YankRing.vim'
+if !has('gui_running')
+  Plug 'sjl/vitality.vim'
+endif
+
+" UI
+Plug 'afgomez/better-cobalt.vim'
+Plug 'afgomez/vim-foldtext'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'neomake/neomake'
+Plug 'simnalamburt/vim-mundo'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Language support
+Plug 'cespare/vim-toml'
+Plug 'elixir-lang/vim-elixir'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'vim-perl/vim-perl'
+Plug 'wting/rust.vim'
+
+" Helps debugging colorschemes
+Plug 'gerw/vim-HiLinkTrace'
+
+call plug#end()
+
+"
+" Behaviour
+" ---------
+let mapleader=","
+
+" STFU Vim!
+set visualbell
+
+" Use system clipboard
+set clipboard=unnamed
+
+" Enable mouse in the terminal
+set mouse=a
+
+" Allow backspacing over everything
+set backspace=indent,eol,start
+
+" Don't complain when switching unsaved buffers
+set hidden
+
+" re-read a file if it has a different timestamp
+set autoread
+
+" Don't include the character under the cursor in selection
+set selection=exclusive
+
+" When switching buffers go to an existing window if visible
+set switchbuf=useopen
+
+" Rely on git
+set nobackup
+set noswapfile
+
+" Save files when focus is lost
+augroup focus_lost
+  autocmd!
+  autocmd BufLeave,FocusLost * silent! wall
+augroup END
+
+" Make sure the above works over SSH/tmux
+if (!has('gui'))
+  let g:vitality_always_assume_iterm=1
+endif
+
+" remember more commands and search history
+set history=10000
+
+" Undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+nmap <leader>u :MundoToggle<CR>
+
+" Search
+set hlsearch      " Highlight search results"
+set incsearch     " ...dynamically as they are typed.
+set ignorecase    " Don't care about case
+set smartcase     " Insensitive case unless there are some uppercase letters
+
+" Clear search highlight when done searching
+nnoremap <CR> :noh<CR><CR>
+
+" Don't wrap lines by default
+set nowrap
+
+" But if you need to, move around wrapped lines nicely
+nnoremap <Up> gk
+nnoremap k gk
+nnoremap gk k
+nnoremap <Down> gj
+nnoremap j gj
+nnoremap gj j
+
+" Easier window movements
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Reselect when shifting around
+vnoremap > ><CR>gv
+vnoremap < <<CR>gv
+
+" Square up visual selections
+set virtualedit=block
+
+" Use shift for selections in macvim
+if has("gui_macvim")
+  let macvim_hig_shift_movement = 1
+endif
+
+" Fold settings
+set foldmethod=syntax
+set foldenable
+set foldlevelstart=99
+
+" Two spaces
+set tabstop=2
+set shiftwidth=2 softtabstop=2 expandtab
+
+set autoindent  " Indent
+set smartindent " Be smart about it
+
+set formatoptions+=j " Delete comment character when joining commented lines"
+set nojoinspaces
+
+" My big fingers keep opening the builtin help
+map <F1> <Nop>
+map! <F1> <Nop>
+map K <Nop>
+map <Help> <Nop>
+map! <Help> <Nop>
+
+" Fast switch between files
+nnoremap <leader><leader> <c-^>
+
+" Make AutoPairs dumber
+let g:AutoPairsMultilineClose = 0
+
+" Edit a file in the same path of the current one
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Togle paste mode
+map <Leader>p :set paste!<CR>
+
+" Be smart about completions when using <TAB>
+set completeopt=longest,menuone
+
+function! s:CompleteMenu()
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+inoremap <silent> <CR> <C-r>=<SID>CompleteMenu()<CR>
+"
+" UI
+" -------------------
+set encoding=utf-8   " We are in the 21st century thank you very much
+syntax on            " Color all the things!
+set t_Co=256         " With all the colors in the world!
+
+" Set a bright colorscheme for presentations in projectors
+if $ITERM_PROFILE == 'Demos'
+  set background=light
+  colorscheme solarized
+  set nolist " We don't want distracting characters when demoing
+else
+  color better-cobalt  " And use a beautiful theme!
+  let g:airline_theme = "powerlineish"
+  set list " SHow hidden characters
+endif
+
+set scrolloff=5      " Show some context when scrolling pages
+
+" Show available options in Ex mode
+set wildmenu
+set wildmode=longest:full
+
+set cursorline  " Show me where I am
+set number      " Show line numbers
+set listchars=tab:▸\ ,eol:¬  " Use pretty symbols for hidden characters
+
+" Status line setup
+set cmdheight=2   " I like high command status
+set laststatus=2  " Always show status line (for vim-airline)
+set noshowmode    " We have it in vim-airline already
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#checks = ['indent', 'long', 'mixed-indent-file']
+
+" Remove delay in vim-airline when leaving insert mode
+set ttimeoutlen=50
+
+" If the filetype of the file has some textwidth setting set the color column
+" to that value. If not, set it to a reasonable default
+function! EnsureColorColumn()
+  if &tw == 0
+    setlocal colorcolumn=79
+  else
+    setlocal colorcolumn=+0
+  endif
+endfunction
+au Filetype * call EnsureColorColumn()
+
+"
+" Syntax settings
+" ---------------
+let ruby_operators=1
+let g:javascript_plugin_jsdoc = 1
+
+"
+" Window management
+" -----------------
+set splitright      " Vertical splits to the right
+" set splitbelow      " Horizontal splits below
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+"
+" CtrlP
+" -----------------
+let g:ctrlp_map = '<Leader>gf'
+let g:ctrlp_match_window = 'results:30'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+let g:ctrlp_max_files=0
+let g:ctrlp_user_command = [ '.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard',
+                           \ 'ag %s -l --nocolor --hidden -g ""'
+                           \ ]
+
+map <Leader>gb :CtrlPBuffer<CR>
+
+" Better :tjump
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
+let g:ctrlp_tjump_only_silent = 1
+
+"
+" Neomake
+" -------
+autocmd! BufWritePost * Neomake
+
+let g:neomake_error_sign   = { 'text': '•' }
+let g:neomake_info_sign    = { 'text': '•' }
+let g:neomake_message_sign = { 'text': '•' }
+let g:neomake_warning_sign = { 'text': '•' }
+
+let g:neomake_js_enabled_makers   = ['eslint']
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
+let g:neomake_scss_enabled_makers = ['scsslint']
+let g:neomake_haml_enabled_makers = ['hamllint']
