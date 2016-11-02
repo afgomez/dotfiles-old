@@ -3,11 +3,11 @@ tap 'homebrew/versions'
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
+tap 'universal-ctags/universal-ctags'
 
 # Brew formulas
 brew 'bash'
 brew 'bash-completion2'
-brew 'ctags'
 brew 'elixir'
 brew 'git', args: ['with-pcre']
 brew 'hub'
@@ -16,6 +16,7 @@ brew 'node'
 brew 'rbenv'
 brew 'ruby-build'
 brew 'the_silver_searcher'
+brew 'universal-ctags', args: ['HEAD']
 
 # Cask formulas
 cask '1password'
