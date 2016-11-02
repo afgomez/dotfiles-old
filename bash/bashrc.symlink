@@ -9,7 +9,7 @@ if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
 
-# This needs to go here
+# We want to use globbing later in this file, so set it up here
 shopt -s nullglob
 
 # Setup the PATH
