@@ -1,0 +1,45 @@
+# Behaviour config
+set mouse = yes
+set mouse-scroll = 2
+
+# View options
+set main-view = id:width=8 date:display=relative author:width=10 commit-title:graph=1,refs=1
+set line-graphics = utf-8
+set commit-order = topo
+set tab-size = 4
+
+set diff-options = --patience
+
+# Interface colors
+color cursor      default color234
+color title-blur  color238 color232
+color title-focus default color233
+
+# Commit list colors
+color id yellow default
+color author green default
+color date cyan default
+color graph-commit color250 default
+
+# Ref colors (match the `git log` output)
+color main-head green default bold
+color main-remote red default bold
+color main-tracked red default bold
+color main-tag yellow default bold
+color main-local-tag yellow default bold
+color main-ref cyan default bold
+
+# diff colors (match the `git show` output)
+color commit yellow default
+color "Author: " default default
+color "AuthorDate: " default default
+color "Commit: " default default
+color "CommitDate: " default default
+color "Date: " default default
+color diff-stat color238 default
+color "diff --" default default bold
+color diff-header default default bold
+color diff-index default default bold
+color "--- a/" default default bold
+color "+++ b/" default default bold
+color diff-chunk cyan default

@@ -13,6 +13,7 @@ brew 'git', args: ['with-pcre']
 brew 'hub'
 brew 'macvim', args: ['with-luajit', 'with-override-system-vim']
 brew 'node'
+brew 'tig'
 brew 'rbenv'
 brew 'ruby-build'
 brew 'the_silver_searcher'
