@@ -12,6 +12,7 @@ set guioptions+=c
 set guifont=PragmataPro:h14
 
 if has("gui_macvim")
+  set macligatures
 
   " Cmd-w closes buffer keeping the splits
   macmenu &File.Close key=<nop>
