@@ -1,0 +1,76 @@
+# Local/private config goes in the include
+[include]
+  path = ~/.gitconfig.local
+
+[alias]
+  co = checkout
+  ci = commit -v
+  st = status
+  sync = !git pull && git push
+  graph = log --graph --oneline --decorate=short
+  amend = commit --amend
+  diffc = diff --cached
+
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
+
+  mine = !"git log --author=$(git config --global --get user.email)"
+
+  nwadd = !sh -c 'git diff -b --no-color "$@" | git apply --cached --ignore-whitespace' -
+  branches = for-each-ref --sort=-committerdate refs/heads/
+  contributors = shortlog -s -n
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+  pager = less -F -X
+  preloadindex = true
+
+[color]
+  ui = auto
+
+[apply]
+  whitespace = nowarn
+
+[branch]
+  autosetuprebase = always
+
+[commit]
+  template = ~/.gitmessage.txt
+
+[diff]
+  algorithm = patience
+  compactionHeuristic = true
+
+[grep]
+  lineNumber = true
+
+[help]
+  autocorrect = 1
+
+[interactive]
+  diffFilter = diff-highlight
+
+[log]
+  decorate = short
+
+[merge]
+  summary = true
+
+[pager]
+  log = diff-highlight | less -X -F
+  show = diff-highlight | less -X -F
+  diff = diff-highlight | less -X -F
+
+[push]
+  default = upstream
+
+[pull]
+  rebase = true
+
+[rebase]
+  autosquash = true
+
+[rerere]
+  enabled = true

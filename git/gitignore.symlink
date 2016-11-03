@@ -1,0 +1,11 @@
+.DS_Store
+.svn
+.rvmrc
+.ruby-version
+.rbenv-*
+*~
+\#*#
+*.swp
+tags
+*.tags*
+.bundle
