@@ -35,25 +35,16 @@ if has("gui_macvim")
   macm Window.Select\ Previous\ Tab key=<D-M-Left>
   macm Window.Select\ Next\ Tab key=<D-M-Right>
 
-  " Map Cmd-# to switch tabs
-  map <D-0> 0gt
-  imap <D-0> <Esc>0gt
-  map <D-1> 1gt
-  imap <D-1> <Esc>1gt
-  map <D-2> 2gt
-  imap <D-2> <Esc>2gt
-  map <D-3> 3gt
-  imap <D-3> <Esc>3gt
-  map <D-4> 4gt
-  imap <D-4> <Esc>4gt
-  map <D-5> 5gt
-  imap <D-5> <Esc>5gt
-  map <D-6> 6gt
-  imap <D-6> <Esc>6gt
-  map <D-7> 7gt
-  imap <D-7> <Esc>7gt
-  map <D-8> 8gt
-  imap <D-8> <Esc>8gt
-  map <D-9> 9gt
-  imap <D-9> <Esc>9gt
+  " Switch to specific tab numbers with Command-number
+  noremap <D-1> :tabn 1<CR>
+  noremap <D-2> :tabn 2<CR>
+  noremap <D-3> :tabn 3<CR>
+  noremap <D-4> :tabn 4<CR>
+  noremap <D-5> :tabn 5<CR>
+  noremap <D-6> :tabn 6<CR>
+  noremap <D-7> :tabn 7<CR>
+  noremap <D-8> :tabn 8<CR>
+  noremap <D-9> :tabn 9<CR>
+  " Command-0 goes to the last tab
+  noremap <D-0> :tablast<CR>
 endif
