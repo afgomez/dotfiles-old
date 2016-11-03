@@ -252,6 +252,12 @@ au Filetype * call EnsureColorColumn()
 let ruby_operators=1
 let g:javascript_plugin_jsdoc = 1
 
+" Treat things like `background-color` as one word
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css,scss setlocal iskeyword+=-
+augroup END
+
 "
 " Window management
 " -----------------
