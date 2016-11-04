@@ -11,6 +11,7 @@ brew 'bash-completion2'
 brew 'elixir'
 brew 'git', args: ['with-pcre']
 brew 'hub'
+brew 'less'
 brew 'macvim', args: ['with-luajit', 'with-override-system-vim']
 brew 'node'
 brew 'tig'
