@@ -35,3 +35,5 @@ cask 'skype'
 cask 'skype'
 cask 'transmission'
 cask 'vlc'
+
+# vim: ft=ruby:sw=2:ts=2:expandtab
