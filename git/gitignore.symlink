@@ -7,5 +7,6 @@
 \#*#
 *.swp
 tags
+tags.*
 *.tags*
 .bundle
