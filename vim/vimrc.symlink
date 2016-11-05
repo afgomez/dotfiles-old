@@ -223,7 +223,7 @@ set scrolloff=5      " Show some context when scrolling pages
 
 " Show available options in Ex mode
 set wildmenu
-set wildmode=longest:full
+set wildmode=full
 
 set cursorline  " Show me where I am
 set number      " Show line numbers
