@@ -239,6 +239,9 @@ else
   set list " SHow hidden characters
 endif
 
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
 set scrolloff=5      " Show some context when scrolling pages
 
 " Show available options in Ex mode
