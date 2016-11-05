@@ -101,6 +101,7 @@ set nobackup
 set noswapfile
 
 " Save files when focus is lost
+set autowrite
 augroup focus_lost
   autocmd!
   autocmd BufLeave,FocusLost * silent! wall
