@@ -245,6 +245,10 @@ set scrolloff=5      " Show some context when scrolling pages
 set wildmenu
 set wildmode=full
 
+set wildignore+=.hg,.git,.svn                   " Version control"
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg  " binary images"
+set wildignore+=*.DS_Store                      " OSX bullshit
+
 set cursorline  " Show me where I am
 set number      " Show line numbers
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮  " Use pretty symbols for hidden characters
