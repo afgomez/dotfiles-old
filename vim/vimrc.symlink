@@ -291,6 +291,13 @@ function! EnsureColorColumn()
 endfunction
 au Filetype * call EnsureColorColumn()
 
+augroup ft_quickfix
+  au!
+  au Filetype qf setlocal colorcolumn=0 nonumber nolist cursorline nowrap tw=0
+
+  au Filetype qf nnoremap <buffer> <cr> :execute "normal! \<lt>cr>"<cr>
+augroup END
+
 "
 " Syntax settings
 " ---------------
