@@ -212,6 +212,11 @@ function! s:CompleteMenu()
   return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 inoremap <silent> <CR> <C-r>=<SID>CompleteMenu()<CR>
+
+" Formatting, TextMate-style
+nnoremap Q gqip
+vnoremap Q gq
+
 "
 " UI
 " -------------------
