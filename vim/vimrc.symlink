@@ -21,7 +21,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'qpkorr/vim-bufkill'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
@@ -63,6 +62,10 @@ Plug 'wting/rust.vim'
 Plug 'gerw/vim-HiLinkTrace'
 
 call plug#end()
+
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
 "
 " Behaviour
