@@ -227,7 +227,8 @@ set wildmode=full
 
 set cursorline  " Show me where I am
 set number      " Show line numbers
-set listchars=tab:▸\ ,eol:¬  " Use pretty symbols for hidden characters
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮  " Use pretty symbols for hidden characters
+set showbreak=↪
 
 " Status line setup
 set cmdheight=2   " I like high command status
