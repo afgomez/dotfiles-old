@@ -96,10 +96,6 @@ set selection=exclusive
 " When switching buffers go to an existing window if visible
 set switchbuf=useopen
 
-" Rely on git
-set nobackup
-set noswapfile
-
 " Save files when focus is lost
 set autowrite
 augroup focus_lost
@@ -115,12 +111,27 @@ endif
 " remember more commands and search history
 set history=10000
 
-" Undo
-set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
+" Shut up vim
+set noswapfile
+
+" Have backups. Not everything is under version control, and somethigs I run
+" the eventual 'git checkout'
+set backup
+set backupdir=~/.vim/tmp/backup//
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+
+" Undo settings
+set undofile                      " Save undo's after file closes
+set undodir=$HOME/.vim/tmp/undo// " where to save undo histories
+set undolevels=1000               " How many undos
+set undoreload=10000              " number of lines to save for undo
 nmap <leader>u :MundoToggle<CR>
+
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
 
 " Search
 set hlsearch      " Highlight search results"
