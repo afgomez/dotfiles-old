@@ -20,6 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'qpkorr/vim-bufkill'
+Plug 'rhysd/devdocs.vim'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -190,9 +191,11 @@ set nojoinspaces
 " My big fingers keep opening the builtin help
 map <F1> <Nop>
 map! <F1> <Nop>
-map K <Nop>
 map <Help> <Nop>
 map! <Help> <Nop>
+
+" Override default help with devdocs
+nmap K <Plug>(devdocs-under-cursor)
 
 " Fast switch between files
 nnoremap <leader><leader> <c-^>
