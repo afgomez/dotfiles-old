@@ -226,6 +226,8 @@ augroup ft_gitcommit
   au Filetype gitcommit :MUcompleteAutoOff
 augroup END
 
+" Prettier JS completion
+let g:tern_show_signature_in_pum=1
 
 " Formatting, TextMate-style
 nnoremap Q gqip
