@@ -302,7 +302,10 @@ function! EnsureColorColumn()
     setlocal colorcolumn=+0
   endif
 endfunction
-au Filetype * call EnsureColorColumn()
+augroup color_column
+  au!
+  au Filetype * call EnsureColorColumn()
+augroup END
 
 augroup ft_quickfix
   au!
