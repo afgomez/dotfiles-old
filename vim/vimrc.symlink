@@ -14,10 +14,11 @@ call plug#begin('~/.vim/plugged')
 
 " Behaviour related plugins
 Plug 'afgomez/vim-whitespace'
-Plug 'ajh17/VimCompletesMe'
+" Plug 'ajh17/VimCompletesMe'
 Plug 'dietsche/vim-lastplace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'lifepillar/vim-mucomplete'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/devdocs.vim'
@@ -211,12 +212,20 @@ map <Leader>p :set paste!<CR>
 
 " Be smart about completions when using <TAB>
 set complete=.,w,b,u,t
-set completeopt=longest,menuone
+set completeopt=menu,menuone,noinsert,noselect
+set shortmess+=c
+let g:mucomplete#enable_auto_at_startup = 1
 
 function! s:CompleteMenu()
   return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 inoremap <silent> <CR> <C-r>=<SID>CompleteMenu()<CR>
+
+augroup ft_gitcommit
+  au!
+  au Filetype gitcommit :MUcompleteAutoOff
+augroup END
+
 
 " Formatting, TextMate-style
 nnoremap Q gqip
