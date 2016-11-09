@@ -307,6 +307,7 @@ augroup color_column
   au Filetype * call EnsureColorColumn()
 augroup END
 
+" Cleanup a bit the quickfix
 augroup ft_quickfix
   au!
   au Filetype qf setlocal colorcolumn=0 nonumber nolist cursorline nowrap tw=0
