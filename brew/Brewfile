@@ -22,6 +22,7 @@ brew 'universal-ctags', args: ['HEAD']
 
 # Cask formulas
 cask '1password'
+cask 'appcleaner'
 cask 'caffeine'
 cask 'dropbox'
 cask 'firefoxdeveloperedition'
