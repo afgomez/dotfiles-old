@@ -1,77 +1,77 @@
 # Local/private config goes in the include
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 
 [alias]
-  co = checkout
-  ci = commit -v
-  st = status
-  sync = !git pull && git push
-  graph = log --graph --oneline --decorate=short
-  amend = commit --amend
-  diffc = diff --cached
+	co = checkout
+	ci = commit -v
+	st = status
+	sync = !git pull && git push
+	graph = log --graph --oneline --decorate=short
+	amend = commit --amend
+	diffc = diff --cached
 
-  ignore = update-index --assume-unchanged
-  unignore = update-index --no-assume-unchanged
-  ignored = !git ls-files -v | grep "^[[:lower:]]"
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep "^[[:lower:]]"
 
-  mine = !"git log --author=$(git config --global --get user.email)"
+	mine = !"git log --author=$(git config --global --get user.email)"
 
-  nwadd = !sh -c 'git diff -b --no-color "$@" | git apply --cached --ignore-whitespace' -
-  branches = for-each-ref --sort=-committerdate refs/heads/
-  contributors = shortlog -s -n
+	nwadd = !sh -c 'git diff -b --no-color "$@" | git apply --cached --ignore-whitespace' -
+	branches = for-each-ref --sort=-committerdate refs/heads/
+	contributors = shortlog -s -n
 
 [core]
-  excludesfile = ~/.gitignore
-  editor = vim
-  pager = less -F -X
-  preloadindex = true
+	excludesfile = ~/.gitignore
+	editor = vim
+	pager = less -F -X
+	preloadindex = true
 
 [color]
-  ui = auto
+	ui = auto
 
 [apply]
-  whitespace = nowarn
+	whitespace = nowarn
 
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 
 [commit]
-  template = ~/.gitmessage.txt
+	template = ~/.gitmessage.txt
 
 [diff]
-  algorithm = patience
-  compactionHeuristic = true
+	algorithm = patience
+	compactionHeuristic = true
 
 [grep]
-  lineNumber = true
+	lineNumber = true
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [interactive]
-  diffFilter = diff-highlight
+	diffFilter = diff-highlight
 
 [log]
-  decorate = short
+	decorate = short
 
 [merge]
-  summary = true
+	summary = true
 
 [pager]
-  log = diff-highlight | less -X -F
-  show = diff-highlight | less -X -F
-  diff = diff-highlight | less -X -F
+	log = diff-highlight | less -X -F
+	show = diff-highlight | less -X -F
+	diff = diff-highlight | less -X -F
 
 [push]
-  default = upstream
+	default = upstream
 
 [pull]
-  rebase = true
+	rebase = true
 
 [rebase]
-  autosquash = true
+	autosquash = true
 	autostash = true
 
 [rerere]
-  enabled = true
+	enabled = true
