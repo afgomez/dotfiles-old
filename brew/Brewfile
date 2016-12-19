@@ -1,4 +1,5 @@
 tap 'homebrew/versions'
+tap 'homebrew/dupes'
 
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
