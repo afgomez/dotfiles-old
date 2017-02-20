@@ -125,6 +125,9 @@ if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir), "p")
 endif
 
+" So webpack properly listens to file changes
+set backupcopy=yes
+
 " Undo settings
 set undofile                      " Save undo's after file closes
 set undodir=$HOME/.vim/tmp/undo// " where to save undo histories
