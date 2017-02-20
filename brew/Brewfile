@@ -20,6 +20,7 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'the_silver_searcher'
 brew 'universal-ctags', args: ['HEAD']
+brew 'yarn'
 
 # Cask formulas
 cask '1password'
