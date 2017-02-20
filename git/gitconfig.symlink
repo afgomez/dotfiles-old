@@ -21,6 +21,8 @@
 	branches = for-each-ref --sort=-committerdate refs/heads/
 	contributors = shortlog -s -n
 
+	pr = !"git push -u origin $(git rev-parse --abbrev-ref HEAD) && hub pull-request"
+
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
