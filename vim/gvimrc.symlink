@@ -9,8 +9,7 @@ set guioptions-=rRlL
 set guioptions+=c
 
 " Use a pretty font
-set guifont=Iosevka\ Slab:h14
-set linespace=-1
+set guifont=PragmataPro:h14
 
 if has("gui_macvim")
   set macligatures
