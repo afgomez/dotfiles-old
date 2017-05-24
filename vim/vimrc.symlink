@@ -333,6 +333,12 @@ augroup AdjustIsKeyword
   autocmd FileType css,scss setlocal iskeyword+=-
 augroup END
 
+augroup SetFoldMethod
+  autocmd!
+
+  autocmd FileType haml setlocal foldmethod=indent
+augroup END
+
 "
 " Window management
 " -----------------
