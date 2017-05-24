@@ -40,6 +40,7 @@ endif
 Plug 'afgomez/better-cobalt.vim'
 Plug 'afgomez/vim-foldtext'
 Plug 'altercation/vim-colors-solarized'
+Plug 'benjie/neomake-local-eslint.vim'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'neomake/neomake'
