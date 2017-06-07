@@ -244,8 +244,9 @@ set encoding=utf-8   " We are in the 21st century thank you very much
 syntax on            " Color all the things!
 set t_Co=256         " With all the colors in the world!
 
-" Don't try to highlight lines longer than 800 characters.
-set synmaxcol=800
+" Don't try to highlight long lines.
+" This helps vim to not choke on SCSS files with data-urls on them
+set synmaxcol=180
 
 " Set a bright colorscheme for presentations in projectors
 if $ITERM_PROFILE == 'Demos'
