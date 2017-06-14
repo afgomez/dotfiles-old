@@ -2,6 +2,9 @@
 --exclude=node_modules
 --exclude=*.min.js
 --exclude=log
+--exclude=public
+--exclude=dist
+--exclude=tmp
 
 # SASS support
 --langdef=scss
