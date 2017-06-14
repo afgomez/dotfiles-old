@@ -221,6 +221,10 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>p :set paste!<CR>
 
 " Be smart about completions when using <TAB>
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+
 set complete=.,w,b,u,t
 set completeopt=longest,menuone
 set shortmess+=c
