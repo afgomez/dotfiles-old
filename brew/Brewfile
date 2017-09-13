@@ -35,7 +35,6 @@ cask 'qlstephen'
 cask 'quicklook-csv'
 cask 'shiftit'
 cask 'skype'
-cask 'skype'
 cask 'transmission'
 cask 'vlc'
 
