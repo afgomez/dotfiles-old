@@ -13,7 +13,16 @@ alias la='ls -A'
 type hub >/dev/null 2>&1 && alias git='hub'
 
 # Syntaxt highlight cat
-type pygmentize >/dev/null 2>&1 && alias ccat='pygmentize -O style=monokai -f console256 -g'
+function ccat {
+  type pygmentize >/dev/null 2>&1 || exit
 
+  if [ "$ITERM_PROFILE" == "Demos" ]; then
+    style="solarizedlight"
+  else
+    style="monokai"
+  fi
+
+  pygmentize -O style=$style -f console256 -g $*
+}
 
 alias reload='source ~/.bash_profile'
