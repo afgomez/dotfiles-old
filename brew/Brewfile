@@ -19,7 +19,8 @@ brew 'node'
 brew 'tig'
 brew 'rbenv'
 brew 'ruby-build'
-brew 'the_silver_searcher'
+brew 'fzf'
+brew 'ripgrep'
 brew 'universal-ctags', args: ['HEAD']
 
 # Cask formulas

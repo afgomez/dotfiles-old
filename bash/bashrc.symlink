@@ -5,6 +5,9 @@ export PROJECTS="$HOME/code"
 # Default editor for all the terminal apps
 export EDITOR="vim"
 
+# Make FZF use git if files are available
+type rg >/dev/null 2>&1 && export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git"'
+
 if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
