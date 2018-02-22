@@ -7,12 +7,25 @@ endif
 " -------------
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'editorconfig/editorconfig-vim'
+
 " UI
 Plug 'afgomez/better-cobalt.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
+
+
+"
+" Indent settings
+" ---------------
+set tabstop=2
+set shiftwidth=2 softtabstop=2 expandtab
+
+set autoindent
+set smartindent
+
 
 "
 " Setup UI
