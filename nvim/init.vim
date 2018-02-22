@@ -15,6 +15,10 @@ Plug 'afgomez/better-cobalt.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+if !has('gui')
+  Plug 'sjl/vitality.vim'
+endif
+
 call plug#end()
 
 
@@ -63,6 +67,20 @@ let g:airline_mode_map = {
 " Remove delay in vim-airline when leaving insert mode
 set ttimeoutlen=50
 
+
+"
+" Autosave
+" --------
+
+set autowrite
+augroup focus_lost
+  autocmd!
+  autocmd BufLeave,FocusLost * silent! wall
+augroup END
+
+if (!has('gui'))
+  let g:vitality_always_assume_iterm=1
+endif
 
 "
 " Keymaps
