@@ -76,6 +76,27 @@ let g:airline_mode_map = {
 " Remove delay in vim-airline when leaving insert mode
 set ttimeoutlen=50
 
+" STFU Vim!
+set visualbell
+
+" Use system clipboard
+set clipboard=unnamed
+
+" Enable mouse in the terminal
+set mouse=a
+
+" Don't complain when switching unsaved buffers
+set hidden
+
+" re-read a file if it has a different timestamp
+set autoread
+
+" Don't include the character under the cursor in selection
+set selection=exclusive
+
+" When switching buffers go to an existing window if visible
+set switchbuf=useopen
+
 "
 " Undo
 " ----
