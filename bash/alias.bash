@@ -9,6 +9,10 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 
+# Alias vim to neovim
+type nvim >/dev/null 2>&1 && alias vim='nvim'
+type vimr >/dev/null 2>&1 && alias mvim='vimr'
+
 # Augment git
 type hub >/dev/null 2>&1 && alias git='hub'
 
