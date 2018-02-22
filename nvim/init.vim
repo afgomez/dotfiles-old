@@ -5,6 +5,7 @@ endif
 "
 " Setup plugins
 " -------------
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
@@ -20,6 +21,7 @@ call plug#end()
 "
 " Indent settings
 " ---------------
+
 set tabstop=2
 set shiftwidth=2 softtabstop=2 expandtab
 
