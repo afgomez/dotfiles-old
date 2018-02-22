@@ -10,6 +10,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'afgomez/vim-whitespace'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'farmergreg/vim-lastplace'
 
 " UI
 Plug 'afgomez/better-cobalt.vim'
