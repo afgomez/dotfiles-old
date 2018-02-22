@@ -77,6 +77,7 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 # Enable Mail.app bundles (for GMailinator)
 defaults write com.apple.mail EnableBundles -bool true
 
-for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer" "Terminal"; do
-  killall "${app}" &> /dev/null
-done
+## This prevents other scripts from running...
+# for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer" "Terminal"; do
+#   killall "${app}" &> /dev/null
+# done
