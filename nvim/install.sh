@@ -8,6 +8,12 @@ if [ ! -d $config ]; then
   mkdir -p $config
 fi
 
+cache=$HOME/.cache/nvim
+if [ ! -d $cache ]; then
+  mkdir -p $cache
+  mkdir -p $cache/undo
+fi
+
 # Manually symlink init file
 if [ ! -e $config/init.vim ]; then
   ln -s $DOTFILES/nvim/init.vim $config/init.vim

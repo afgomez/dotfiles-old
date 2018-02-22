@@ -12,6 +12,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " UI
 Plug 'afgomez/better-cobalt.vim'
+Plug 'simnalamburt/vim-mundo'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -70,6 +71,18 @@ let g:airline_mode_map = {
 " Remove delay in vim-airline when leaving insert mode
 set ttimeoutlen=50
 
+"
+" Undo
+" ----
+
+set undofile                         " Save undo's after file closes
+set undodir=$HOME/.cache/nvim/undo// " where to save undo histories
+set undolevels=1000                  " How many undos
+set undoreload=10000                 " number of lines to save for undo
+
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
 
 "
 " Autosave
@@ -100,4 +113,7 @@ noremap <C-l> <C-w>l
 " FZF
 map <Leader>gf :Files<CR>
 map <Leader>gb :Buffers<CR>
+
+" Mundo
+nmap <leader>u :MundoToggle<CR>
 
