@@ -60,3 +60,10 @@ let g:airline_mode_map = {
 
 " Remove delay in vim-airline when leaving insert mode
 set ttimeoutlen=50
+
+
+"
+" Keymaps
+" -------
+
+let mapleader=","
