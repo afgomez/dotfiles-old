@@ -25,6 +25,10 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+" Load Matchit. Not really a plugin...
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
 
 "
 " Indent settings
