@@ -84,14 +84,12 @@ overwrite_all=false
 backup_all=false
 skip_all=false
 echo 'Installing dotfiles...'
-echo $DOTFILES
 for src in $(find -H $DOTFILES -maxdepth 2 -name '*.symlink' -not -path '*.git*')
 do
   echo $src
   dst="$HOME/.$(basename "${src%.*}")"
   link_file "$src" "$dst"
 done
-
 
 # Find all the installers and execute them
 find $DOTFILES -name install.sh -mindepth 2 | while read installer; do
