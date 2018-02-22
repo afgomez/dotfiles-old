@@ -19,6 +19,9 @@ if !has('gui')
   Plug 'sjl/vitality.vim'
 endif
 
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 
@@ -94,4 +97,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" FZF
+map <Leader>gf :Files<CR>
+map <Leader>gb :Buffers<CR>
 
