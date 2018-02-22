@@ -1,3 +1,7 @@
+if !has('nvim')
+  set nocompatible
+endif
+
 "
 " Setup plugins
 " -------------
