@@ -12,6 +12,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " UI
 Plug 'afgomez/better-cobalt.vim'
+Plug 'cohama/lexima.vim'
 Plug 'simnalamburt/vim-mundo'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
