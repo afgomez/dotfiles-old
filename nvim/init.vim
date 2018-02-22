@@ -8,6 +8,7 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'afgomez/vim-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 
 " UI
