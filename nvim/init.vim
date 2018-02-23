@@ -85,6 +85,27 @@ let g:airline_mode_map = {
 " Remove delay in vim-airline when leaving insert mode
 set ttimeoutlen=50
 
+" Tell me where I am
+set number
+set cursorline
+
+" Don't jump arround when showint linting errors
+set signcolumn="yes"
+
+" If the filetype of the file has some textwidth setting set the color column
+" to that value. If not, set it to a reasonable default
+function! EnsureColorColumn()
+  if &tw == 0
+    setlocal colorcolumn=79
+  else
+    setlocal colorcolumn=+0
+  endif
+endfunction
+augroup color_column
+  au!
+  au Filetype * call EnsureColorColumn()
+augroup END
+
 " STFU Vim!
 set visualbell
 
