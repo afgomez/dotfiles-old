@@ -12,3 +12,4 @@ tags.*
 *.tags*
 .bundle
 .vscode
+.sync
