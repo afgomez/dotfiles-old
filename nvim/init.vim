@@ -130,6 +130,9 @@ set switchbuf=useopen
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" Vertical splits to the right
+set splitright
+
 " Don't wrap
 set nowrap
 
