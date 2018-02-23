@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'afgomez/vim-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'farmergreg/vim-lastplace'
+Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-ragtag'
@@ -135,6 +136,25 @@ set splitright
 
 " Don't wrap
 set nowrap
+
+"
+" Search
+" ------
+
+set hlsearch      " Highlight search results"
+set incsearch     " ...dynamically as they are typed.
+set ignorecase    " Don't care about case
+set smartcase     " Insensitive case unless there are some uppercase letters
+
+let g:rg_highlight = 'true'
+
+" Cleanup a bit the quickfix
+augroup ft_quickfix
+  au!
+  au Filetype qf setlocal colorcolumn=0 nonumber nolist cursorline nowrap tw=0
+
+  au Filetype qf nnoremap <buffer> <cr> :execute "normal! \<lt>cr>"<cr>
+augroup END
 
 
 "
