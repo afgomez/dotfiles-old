@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'afgomez/vim-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'farmergreg/vim-lastplace'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-rhubarb'
