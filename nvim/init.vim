@@ -130,6 +130,9 @@ set switchbuf=useopen
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+" Don't wrap
+set nowrap
+
 
 "
 " Undo
@@ -177,3 +180,10 @@ map <Leader>gb :Buffers<CR>
 " Mundo
 nmap <leader>u :MundoToggle<CR>
 
+" Sane navigation with wrapped lines
+nnoremap <Up> gk
+nnoremap k gk
+nnoremap gk k
+nnoremap <Down> gj
+nnoremap j gj
+nnoremap gj j
