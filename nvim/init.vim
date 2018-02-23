@@ -190,6 +190,9 @@ endif
 
 let mapleader=","
 
+" Switch to last buffer
+nnoremap <leader><leader> <c-^>
+
 " Easier window movements
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
