@@ -11,6 +11,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'afgomez/vim-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'farmergreg/vim-lastplace'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " UI
 Plug 'afgomez/better-cobalt.vim'
@@ -98,6 +100,10 @@ set selection=exclusive
 
 " When switching buffers go to an existing window if visible
 set switchbuf=useopen
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
 
 "
 " Undo
