@@ -193,6 +193,9 @@ let mapleader=","
 " Switch to last buffer
 nnoremap <leader><leader> <c-^>
 
+" Edit a file in the same path of the current one
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
 " Easier window movements
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
