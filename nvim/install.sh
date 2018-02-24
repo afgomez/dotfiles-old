@@ -2,7 +2,7 @@
 
 set -e
 
-config=$HOME/.config/nvim
+config=$HOME/.config
 
 if [ ! -d $config ]; then
   mkdir -p $config
@@ -15,8 +15,8 @@ if [ ! -d $cache ]; then
 fi
 
 # Manually symlink init file
-if [ ! -e $config/init.vim ]; then
-  ln -s $DOTFILES/nvim/init.vim $config/init.vim
+if [ ! -e $config/nvim ]; then
+  ln -s $DOTFILES/nvim/config $config/nvim
 fi
 
 # Install vim-plug if it doesn't exist
