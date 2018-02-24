@@ -88,5 +88,10 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " Don't wrap lines
 set nowrap
 
+" ...but if you have to, be gentle
+set linebreak
+set showbreak=↪
+
+
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
