@@ -26,3 +26,7 @@ nnoremap gk k
 nnoremap <Down> gj
 nnoremap j gj
 nnoremap gj j
+
+" Reselect when shifting around
+vnoremap > ><CR>gv
+vnoremap < <<CR>gv
