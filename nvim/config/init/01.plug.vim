@@ -32,8 +32,10 @@ Plug 'junegunn/fzf.vim'
 
 " Filetypes/language support
 Plug 'hail2u/vim-css3-syntax'
-Plug 'tpope/vim-rails'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-rails'
 
 " Helps debugging colorschemes
 Plug 'gerw/vim-HiLinkTrace'
