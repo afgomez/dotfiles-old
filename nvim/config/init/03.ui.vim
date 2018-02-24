@@ -79,6 +79,9 @@ set mouse=a
 " Don't include the character under the cursor in selection
 set selection=exclusive
 
+" Square up visual selections
+set virtualedit=block
+
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
