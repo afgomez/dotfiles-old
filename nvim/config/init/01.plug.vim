@@ -30,6 +30,9 @@ endif
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Filetypes/language support
+Plug 'tpope/vim-rails'
+
 " Helps debugging colorschemes
 Plug 'gerw/vim-HiLinkTrace'
 
