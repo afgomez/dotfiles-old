@@ -38,7 +38,7 @@ set ttimeoutlen=50
 
 " Tell me where I am
 set number
-set cursorline
+" set cursorline
 
 " Don't jump arround when showing linting errors
 set signcolumn=yes
