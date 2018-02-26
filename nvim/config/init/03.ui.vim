@@ -92,6 +92,10 @@ set nowrap
 set linebreak
 set showbreak=↪
 
-
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
+
+" Fold settings
+set foldmethod=syntax
+set foldenable
+set foldlevelstart=99
