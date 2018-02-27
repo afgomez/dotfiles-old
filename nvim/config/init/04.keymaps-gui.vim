@@ -4,6 +4,9 @@ map <D-f> /
 " Search in project
 map <D-S-f> :Rg<space>
 
+" Cmd+P like in visual studio
+map <D-p> :Files<CR>
+
 " Toggle comments (uses vim-commentary)
 nmap <D-/> gcc
 vmap <D-/> gc
