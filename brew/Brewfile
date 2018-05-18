@@ -21,6 +21,7 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'fzf'
 brew 'ripgrep'
+brew 'fd'
 brew 'universal-ctags', args: ['HEAD']
 
 # Cask formulas
