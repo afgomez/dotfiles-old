@@ -1,6 +1,6 @@
 # Always append to the history file
 shopt -s histappend
-PROMPT_COMMAND='history -a'
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 # Force oe line for multiline commands
 shopt -s cmdhist
