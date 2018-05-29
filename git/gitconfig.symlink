@@ -21,6 +21,7 @@
 	branches = for-each-ref --sort=-committerdate refs/heads/
 	contributors = shortlog -s -n
 
+	publish = !"git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 	pr = !"git push -u origin $(git rev-parse --abbrev-ref HEAD) && hub pull-request"
 
 [core]
