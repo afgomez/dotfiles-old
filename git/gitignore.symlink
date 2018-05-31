@@ -13,3 +13,4 @@ tags.*
 .bundle
 .vscode
 .sync
+.venv
