@@ -35,6 +35,7 @@ Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-rails'
 
