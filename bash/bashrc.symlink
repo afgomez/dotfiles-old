@@ -21,6 +21,7 @@ shopt -s nullglob
 # Setup the PATH
 export PATH="~/bin:/usr/local/bin:$PATH"
 command -v yarn >/dev/null 2>&1 && export PATH="$PATH:`yarn global bin`"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Load completions from homebrew
 if [ -f $(brew --prefix)/share/bash-completion/bash_completion  ]; then
