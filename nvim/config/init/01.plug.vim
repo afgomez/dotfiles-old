@@ -31,6 +31,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Filetypes/language support
+Plug 'cespare/vim-toml'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
