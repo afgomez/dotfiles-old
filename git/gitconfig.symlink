@@ -15,7 +15,7 @@
 	unignore = update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep "^[[:lower:]]"
 
-	mine = !"git log --author=$(git config --global --get user.email)"
+	mine = !"git log --author=$(git config --get user.email)"
 
 	nwadd = !sh -c 'git diff -b --no-color "$@" | git apply --cached --ignore-whitespace' -
 	branches = for-each-ref --sort=-committerdate refs/heads/
