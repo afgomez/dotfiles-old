@@ -12,3 +12,10 @@ augroup END
 if (!has('gui'))
   let g:vitality_always_assume_iterm=1
 endif
+
+" Autoformat on save
+" ------------------
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
