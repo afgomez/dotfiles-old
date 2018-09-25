@@ -48,12 +48,6 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Pretty icons in the UI (needs to go last)
-" Doesn't work correctly in MacVim, so only enable for terminal
-if !has('gui_running')
-  Plug 'ryanoasis/vim-devicons'
-endif
-
 " Language support
 Plug 'cespare/vim-toml'
 Plug 'elixir-lang/vim-elixir'
