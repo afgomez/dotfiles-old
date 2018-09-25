@@ -4,6 +4,7 @@
 
 [alias]
 	co = checkout
+	cob = checkout-branch-fuzzy
 	ci = commit -v
 	st = status
 	sync = !git pull && git push
