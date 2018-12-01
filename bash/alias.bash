@@ -29,4 +29,7 @@ function ccat {
   pygmentize -O style=$style -f console256 -g $*
 }
 
+# Keynote-bat: syntax highlighting for keynote (use with a light iTerm theme)
+alias knbat='bat -p --theme=OneHalfLight'
+
 alias reload='source ~/.bash_profile'
